@@ -1,0 +1,12 @@
+<h1>確認コードの入力</h1>
+<p>下記のメールアドレスに送信された数字を入力してください。</p>
+<%= @user_form.email %>
+<%= form_with model: @user_form, url: verify_email_path, method: :post do |form| %>
+  <div>
+    <%= form.label :verification_code, '確認コード' %>
+    <%= form.text_field :verification_code %>
+  </div>
+  <div>
+    <%= form.submit '確認' %>
+  </div>
+<% end %>
